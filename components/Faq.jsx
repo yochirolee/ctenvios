@@ -4,7 +4,7 @@ export const Faq = () => {
 		<>
 			<section class="bg-white dark:bg-gray-900">
 				<div class="container max-w-4xl px-6 py-10 mx-auto">
-					<h1 class="text-base lg:text-4xl font-semibold text-center text-gray-800 dark:text-white">
+					<h1 class="text-base font-bold lg:text-3xl text-center text-gray-800 dark:text-white">
 						Frequently asked questions
 					</h1>
 
