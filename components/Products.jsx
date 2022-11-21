@@ -6,18 +6,18 @@ export const Products = () => {
 		<>
 			<section className="bg-white dark:bg-gray-900">
 				<div className="container px-6 py-10 mx-auto">
-					<h1 className="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
+					<h1 className="text-xl  font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
 						Nuestros Productos
 					</h1>
 
-					<p className="max-w-2xl mx-auto my-6 text-center text-gray-500 dark:text-gray-300">
+					<p className="max-w-2xl mx-auto my-2 lg:my-6 text-center text-gray-500 dark:text-gray-300">
 						Enviamos Alimentos, Miscelaneas, Productos Duraderos y Medicinas,
 					</p>
 
 					<div className="flex overflow-x-scroll gap-2  lg:gap-8 lg:mt-8 ">
 						<div className="flex flex-col border  items-center p-8 transition-colors duration-300 transform cursor-pointer group  rounded-xl">
 							<img
-								className=" w-16 h-16 md:w-32 md:h-32 rounded-full ring-4 ring-gray-300"
+								className=" w-20 h-20 md:w-32 md:h-32 rounded-full ring-4 ring-gray-300"
 								src="/cafetera.jpeg"
 								alt="Cafetera"
 							></img>
