@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import { Cart } from "../components/Cart";
 import { AiOutlineUser } from "react-icons/ai";
+import Image from "next/image";
 
 export const AppNavbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -8,7 +9,13 @@ export const AppNavbar = () => {
 		<nav x-data={isOpen} className="relative bg-white mt-4 dark:bg-gray-800">
 			<div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
 				<div className="flex  justify-between">
-					<img className="h-8 md:h-10 object-scale-down" src="ctelogo.png" alt="logo" />
+					<Image
+						className="h-8 md:h-10 object-scale-down"
+						height={36}
+						width={46}
+						src="/ctelogo.png"
+						alt="logo"
+					/>
 
 					<div className="flex lg:hidden">
 						<div className="flex flex-row gap-4 items-center justify-center ">
