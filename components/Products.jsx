@@ -10,7 +10,10 @@ export const Products = () => {
 					<h1 class="text-base lg:text-3xl font-bold text-center text-gray-800 dark:text-white">
 						Nuestros Productos
 					</h1>
-					<div className=" flex flex-row overflow-x-scroll  gap-2 mt-4 pt-4 items-center p-2 lg:gap-10 ">
+					<p className="max-w-2xl text-xs  md:text-sm mx-auto my-2 lg:my-2 text-center text-gray-500 dark:text-gray-300">
+						Todos los precios de nuestros productos puestos en Cuba.
+					</p>
+					<div className=" flex flex-row overflow-x-scroll  gap-4 mt-4 pt-4 items-center p-2 lg:gap-10 ">
 						{ProductsListData.map((product) => (
 							<ProductCard key={product.id} product={product} />
 						))}

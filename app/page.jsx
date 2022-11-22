@@ -54,8 +54,10 @@ export default function Page() {
 			</nav>
 
 			<MainCarousel />
-			
+
 			<Products />
+
+			<Heroes />
 
 			<div class="w-full p-4 text-center bg-white border rounded-lg shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
 				<h5 class="mb-2 text-base lg:text-3xl font-bold text-gray-900 dark:text-white">
