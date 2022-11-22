@@ -7,15 +7,15 @@ import { Products } from "../components/Products";
 export default function Page() {
 	return (
 		<>
-			<nav class="flex ml-4 mb-4 text-xs justify-left" aria-label="Breadcrumb">
-				<ol class="inline-flex justify-center items-center space-x-1 md:space-x-3">
-					<li class="inline-flex items-center">
+			<nav className="flex ml-4 mb-4 text-xs justify-left" aria-label="Breadcrumb">
+				<ol className="inline-flex justify-center items-center space-x-1 md:space-x-3">
+					<li className="inline-flex items-center">
 						<a
 							href="#"
-							class="inline-flex items-center text-xs font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+							className="inline-flex items-center text-xs font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
 						>
 							<svg
-								class="w-4 h-4 mr-2"
+								className="w-4 h-4 mr-2"
 								fill="currentColor"
 								viewBox="0 0 20 20"
 								xmlns="http://www.w3.org/2000/svg"
@@ -26,9 +26,9 @@ export default function Page() {
 						</a>
 					</li>
 					<li>
-						<div class="flex items-center">
+						<div className="flex items-center">
 							<svg
-								class="w-4 h-4 text-gray-400"
+								className="w-4 h-4 text-gray-400"
 								fill="currentColor"
 								viewBox="0 0 20 20"
 								xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +41,7 @@ export default function Page() {
 							</svg>
 							<a
 								href="#"
-								class="ml-1 text-xs font-medium text-gray-700 hover:text-gray-900 md:ml-2 dark:text-gray-400 dark:hover:text-white"
+								className="ml-1 text-xs font-medium text-gray-700 hover:text-gray-900 md:ml-2 dark:text-gray-400 dark:hover:text-white"
 							>
 								Projects
 							</a>
