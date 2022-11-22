@@ -1,7 +1,7 @@
 "use client";
 import { React } from "react";
 import { Carousel } from "flowbite-react";
-import { BsWhatsapp } from "react-icons/Bs";
+import { BsWhatsapp } from "react-icons/bs";
 export const MainCarousel = () => {
 	return (
 		<div className="px-4 h-56 sm:h-64 xl:h-80 2xl:h-96 ">
