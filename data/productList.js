@@ -29,7 +29,7 @@ export const ProductsListData = [
 	{
 		id: 3,
 		name: "Generador Electrico",
-		image: "./generador.webp",
+		image: "/generador.webp",
 		price: 650,
 		description: "Generador Electrico",
 		cant: 0,
@@ -38,7 +38,7 @@ export const ProductsListData = [
 	{
 		id: 4,
 		name: "Batidora Electrica ",
-		image: "./batidora.webp",
+		image: "/batidora.webp",
 		price: 50,
 		description: "Batidora Electrico",
 		cant: 0,
