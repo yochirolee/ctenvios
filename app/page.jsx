@@ -5,6 +5,7 @@ import { Heroes } from "../components/heroes";
 import { MainCarousel } from "../components/MainCarousel";
 import { Products } from "../components/Products";
 import { ProductCard } from "../components/ProductCard";
+import { Cart } from "../components/Cart";
 
 export default function Page() {
 	return (
@@ -53,6 +54,7 @@ export default function Page() {
 			</nav>
 
 			<MainCarousel />
+			
 			<Products />
 
 			<div class="w-full p-4 text-center bg-white border rounded-lg shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">

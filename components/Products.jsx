@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { React } from "react";
-import { BsBox } from "react-icons/bs";
+import { Cart } from "./Cart";
 import { ProductCard } from "./ProductCard";
+import { ProductsListData } from "../data/productList";
 export const Products = () => {
 	return (
 		<>
@@ -10,12 +10,10 @@ export const Products = () => {
 					<h1 class="text-base lg:text-3xl font-bold text-center text-gray-800 dark:text-white">
 						Nuestros Productos
 					</h1>
-
-					<div className="flex overflow-x-scroll py-4 mb-4 gap-2 md:p-4  lg:gap-8 lg:mt-8 ">
-						<ProductCard />
-						<ProductCard />
-						<ProductCard />
-						<ProductCard />
+					<div className=" flex flex-row overflow-x-scroll  gap-2 mt-4 pt-4 items-center p-2 lg:gap-10 ">
+						{ProductsListData.map((product) => (
+							<ProductCard key={product.id} product={product} />
+						))}
 					</div>
 
 					<p className="max-w-2xl text-xs  md:text-sm mx-auto my-2 lg:my-6 text-center text-gray-500 dark:text-gray-300">
