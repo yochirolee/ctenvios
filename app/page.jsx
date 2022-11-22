@@ -53,7 +53,9 @@ export default function Page() {
 			<MainCarousel />
 
 			<Products />
-
+			<h1 class="text-base font-bold mb-4 lg:text-3xl text-center text-gray-800 dark:text-white">
+				Nuestras Redes Sociales
+			</h1>
 			<main className="hidden  bg-[url('/slider5.jpg')] relative bg-cover  bg-center bg-no-repeat   m-4   h-64   rounded-xl shadow-lg  lg:flex flex-col justify-center items-left md:items-center ">
 				<div className="absolute   bg-gray-800/70  h-64 w-full rounded-xl"></div>
 
