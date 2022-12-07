@@ -9,26 +9,12 @@ export const TrackingTimeLine = ({ item }) => {
 						<time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
 							{item.created_at}
 						</time>
-						<div className="flex flex-row gap-4 m-10">
-							<h3 className="text-lg font-bold   text-center   dark:text-white">
+						<div className="flex flex-row gap-4 m-10 items-center">
+							<h3 className="text-lg font-bold text-gray-600   text-center   dark:text-white">
 								{item.TrackingId}
 							</h3>
-							<h3 className="text-sm  border items-center  px-10 text-center rounded-lg bg-blue-600 text-white  dark:text-white">
+							<h3 className="text-sm  py-2  px-10 text-center rounded-lg bg-blue-600 text-white  dark:text-white">
 								{item.Location}
-							</h3>
-						</div>
-					</li>
-					<li className="mb-10 ml-4">
-						<div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-						<time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-							{item.created_at}
-						</time>
-						<div className="flex flex-row gap-4 m-10">
-							<h3 className="text-lg font-bold   text-center   dark:text-white">
-								{item.TrackingId}
-							</h3>
-							<h3 className="text-sm  border items-center  px-10 text-center rounded-lg bg-green-600 text-white  dark:text-white">
-								Recepcionado en Agencia
 							</h3>
 						</div>
 					</li>
