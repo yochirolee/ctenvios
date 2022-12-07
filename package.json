@@ -6,12 +6,14 @@
     "start": "next start"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.1.2",
     "eslint-config-next": "^13.0.3",
     "flowbite": "^1.5.4",
     "flowbite-react": "^0.3.5",
     "next": "^13.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.40.0",
     "react-icons": "^4.6.0"
   },
   "devDependencies": {
