@@ -9,7 +9,7 @@ export const TrackingTimeLine = ({ item }) => {
 						<time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
 							{item.created_at}
 						</time>
-						<div className="flex flex-row gap-4 m-10 items-center">
+						<div className="flex flex-row gap-4 mt-4 items-center">
 							<h3 className="text-lg font-bold text-gray-600   text-center   dark:text-white">
 								{item.TrackingId}
 							</h3>
