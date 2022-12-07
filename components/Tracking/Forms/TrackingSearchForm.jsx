@@ -16,7 +16,7 @@ export const TrackingSearchForm = ({ setItem }) => {
 			let { data: tracking, error } = await supabase
 				.from("tracking")
 				.select("*")
-				.eq("TrackingId", data.search)
+				.eq("TrackingId", data.search.trim().toUpperCase())
 				.single();
 
 			console.log(tracking, "RESULT SEARCH");
