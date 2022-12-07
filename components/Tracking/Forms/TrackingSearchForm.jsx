@@ -1,8 +1,9 @@
 "use client";
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import { supabase } from "../../../Supabase/SupabaseClient";
 
-export const TrackingSearchForm = ({ setItem }) => {
+export const TrackingSearchForm = ({ setItem, setItemDetails }) => {
 	const {
 		register,
 		handleSubmit,
@@ -11,7 +12,8 @@ export const TrackingSearchForm = ({ setItem }) => {
 	} = useForm();
 
 	const onSubmit = async (data) => {
-		console.log(data, "SEAR DATA");
+		setItem(null);
+		setItemDetails(null);
 		try {
 			let { data: tracking, error } = await supabase
 				.from("tracking")
@@ -21,11 +23,27 @@ export const TrackingSearchForm = ({ setItem }) => {
 
 			console.log(tracking, "RESULT SEARCH");
 			setItem(tracking);
+			if (!!tracking) {
+				getItemDetails(tracking);
+			}
 			reset();
 		} catch {
 			console.log(error, "ERROR");
 		}
 	};
+	const getItemDetails = async (item) => {
+		try {
+			const { data, status } = await axios.get(
+				"https://caribe-cargo-api.vercel.app/api/items/" + item.TrackingId,
+			);
+			console.log(data.data);
+			data.data.Location = item.Location;
+			setItemDetails(data.data);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
 	return (
 		<form onSubmit={handleSubmit(onSubmit)} className="flex items-center my-6">
 			<label for="simple-search" className="sr-only">

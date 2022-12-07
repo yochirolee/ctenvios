@@ -5,11 +5,13 @@ import { TrackingTimeLine } from "../../components/Tracking/TimeLine/TrackingTim
 
 export default function Tracking() {
 	const [item, setItem] = useState(null);
+	const [itemDetails, setItemDetails] = useState(null);
+
 	return (
 		<div>
 			<div className="h-screen lg:w-1/2 mx-10">
-				<TrackingSearchForm setItem={setItem} />
-				<TrackingTimeLine item={item} />
+				<TrackingSearchForm setItem={setItem} setItemDetails={setItemDetails} />
+				<TrackingTimeLine item={item} itemDetails={itemDetails} />
 			</div>
 		</div>
 	);
