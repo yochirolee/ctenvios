@@ -14,30 +14,32 @@ export const TrackingSearchForm = ({ setItem, setItemDetails }) => {
 	const onSubmit = async (data) => {
 		setItem(null);
 		setItemDetails(null);
-		try {
-			let { data: tracking, error } = await supabase
-				.from("tracking")
-				.select("*")
-				.eq("TrackingId", data.search.trim().toUpperCase())
-				.single();
 
-			console.log(tracking, "RESULT SEARCH");
-			setItem(tracking);
-			if (!!tracking) {
-				getItemDetails(tracking);
-			}
-			reset();
-		} catch {
-			console.log(error, "ERROR");
-		}
+		let { data: tracking, error } = await supabase
+			.from("tracking")
+			.select(
+				`
+		*,
+		trackingHistory (
+		 *
+		)`,
+			)
+			.order("CreatedAt", { foreignTable: "trackingHistory", ascending: false })
+			.like("HBL", "%" + data.search + "%").single();
+
+		console.log(tracking, "RESULT SEARCH");
+		setItem(tracking);
+		getItemDetails(tracking);
+		reset();
 	};
 	const getItemDetails = async (item) => {
 		try {
 			const { data, status } = await axios.get(
-				"https://caribe-cargo-api.vercel.app/api/items/" + item.TrackingId,
+				"https://caribe-cargo-api.vercel.app/api/items/" + item.HBL,
 			);
 			console.log(data.data);
 			data.data.Location = item.Location;
+			data.data.history = item.trackingHistory;
 			setItemDetails(data.data);
 		} catch (error) {
 			console.log(error);
