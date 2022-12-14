@@ -1,9 +1,10 @@
 "use client";
 import axios from "axios";
+import { Result } from "postcss";
 import { useForm } from "react-hook-form";
 import { supabase } from "../../../Supabase/SupabaseClient";
 
-export const TrackingSearchForm = ({ setItem, setItemDetails }) => {
+export const TrackingSearchForm = ({ setItemDetails, setIsSearching }) => {
 	const {
 		register,
 		handleSubmit,
@@ -12,35 +13,58 @@ export const TrackingSearchForm = ({ setItem, setItemDetails }) => {
 	} = useForm();
 
 	const onSubmit = async (data) => {
-		setItem(null);
-		setItemDetails(null);
+		const result = await getItemDetails(data.search);
 
-		let { data: tracking, error } = await supabase
-			.from("tracking")
-			.select(
-				`
+		try {
+			let { data: tracking, error } = await supabase
+				.from("tracking")
+				.select(
+					`
 		*,
 		trackingHistory (
 		 *
 		)`,
-			)
-			.order("CreatedAt", { foreignTable: "trackingHistory", ascending: false })
-			.like("HBL", "%" + data.search + "%").single();
+				)
+				.order("CreatedAt", { foreignTable: "trackingHistory", ascending: false })
+				.like("HBL", "%" + result.HBL + "%")
+				.single();
+			if (tracking) {
+				result.History = tracking.trackingHistory;
+				result.Location = tracking.Location;
+				console.log(result, "RESULTTTTTTTTTTTTTTTTTTTT");
+				setItemDetails(result);
+				setIsSearching(false);
+			} else {
+				switch (result.estado) {
+					case 0:
+						result.Location = "En Agencia";
+						break;
+					case 1:
+						result.Location = "En Almacen";
+						break;
+					case 2:
+						result.Location = "En Pallet";
+						break;
+					case 3:
+						result.Location = "Contenedor";
+						break;
 
-		console.log(tracking, "RESULT SEARCH");
-		setItem(tracking);
-		getItemDetails(tracking);
-		reset();
+					default:
+						break;
+				}
+
+				setItemDetails(result);
+			}
+		} catch (error) {
+			console.log(error, "EORRRRRRRRRR");
+		}
 	};
-	const getItemDetails = async (item) => {
+
+	const getItemDetails = async (HBL) => {
 		try {
-			const { data, status } = await axios.get(
-				"https://caribe-cargo-api.vercel.app/api/items/" + item.HBL,
-			);
-			console.log(data.data);
-			data.data.Location = item.Location;
-			data.data.history = item.trackingHistory;
-			setItemDetails(data.data);
+			const { data } = await axios.get("https://caribe-cargo-api.vercel.app/api/items/" + HBL);
+
+			return data.data;
 		} catch (error) {
 			console.log(error);
 		}
