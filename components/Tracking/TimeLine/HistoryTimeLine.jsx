@@ -2,7 +2,6 @@ import { React } from "react";
 import { format, parseISO } from "date-fns";
 
 export const HistoryTimeLine = ({ history }) => {
-	console.log(history, "HISTORY");
 	return (
 		<>
 			<ol class="relative border-l border-gray-200 dark:border-gray-700">

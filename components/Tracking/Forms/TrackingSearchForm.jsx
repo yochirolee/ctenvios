@@ -37,7 +37,6 @@ export const TrackingSearchForm = ({ setItemDetails, setIsSearching, isSearching
 			if (tracking) {
 				result.History = tracking.trackingHistory;
 				result.Location = tracking.Location;
-				console.log(result, "RESULTTTTTTTTTTTTTTTTTTTT");
 				setItemDetails(result);
 				setIsSearching(false);
 			} else {
@@ -58,14 +57,12 @@ export const TrackingSearchForm = ({ setItemDetails, setIsSearching, isSearching
 					default:
 						break;
 				}
-				console.log(result, "RESULT");
 				setIsSearching(false);
 				setItemDetails(result);
 			}
 		} catch (error) {
 			setIsSearching(false);
 			setItemDetails(null);
-			console.log(error, "EORRRRRRRRRR");
 		}
 	};
 
@@ -77,7 +74,6 @@ export const TrackingSearchForm = ({ setItemDetails, setIsSearching, isSearching
 		} catch (error) {
 			setIsSearching(false);
 			setItemDetails(null);
-			console.log(error);
 		}
 	};
 

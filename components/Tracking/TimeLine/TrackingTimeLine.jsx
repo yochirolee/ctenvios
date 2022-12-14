@@ -1,6 +1,6 @@
 import { React } from "react";
 import { HistoryTimeLine } from "./HistoryTimeLine";
-export const TrackingTimeLine = ({ itemDetails, isSearching }) => {
+export const TrackingTimeLine = ({ itemDetails }) => {
 	return (
 		<>
 			{itemDetails ? (
