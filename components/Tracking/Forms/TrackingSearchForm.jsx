@@ -4,7 +4,7 @@ import { Result } from "postcss";
 import { useForm } from "react-hook-form";
 import { supabase } from "../../../Supabase/SupabaseClient";
 
-export const TrackingSearchForm = ({ setItemDetails, setIsSearching }) => {
+export const TrackingSearchForm = ({ setItemDetails, setIsSearching, isSearching }) => {
 	const {
 		register,
 		handleSubmit,
@@ -13,9 +13,14 @@ export const TrackingSearchForm = ({ setItemDetails, setIsSearching }) => {
 	} = useForm();
 
 	const onSubmit = async (data) => {
-		const result = await getItemDetails(data.search);
 		setIsSearching(true);
+		const result = await getItemDetails(data.search);
 
+		if (!result?.HBL) {
+			setIsSearching(false);
+			setItemDetails(null);
+			return;
+		}
 		try {
 			let { data: tracking, error } = await supabase
 				.from("tracking")
@@ -44,15 +49,16 @@ export const TrackingSearchForm = ({ setItemDetails, setIsSearching }) => {
 						result.Location = "En Almacen";
 						break;
 					case 2:
-						result.Location = "En Pallet";
+						result.Location = "En Pallet "+" " + result.Pallet;
 						break;
 					case 3:
-						result.Location = "Contenedor";
+						result.Location = "Contenedor " +" "+ result.ContainerNumber;
 						break;
 
 					default:
 						break;
 				}
+				console.log(result, "RESULT");
 				setIsSearching(false);
 				setItemDetails(result);
 			}
@@ -107,6 +113,7 @@ export const TrackingSearchForm = ({ setItemDetails, setIsSearching }) => {
 			</div>
 			<button
 				type="submit"
+				disabled={isSearching}
 				className="p-2.5 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
 			>
 				<svg

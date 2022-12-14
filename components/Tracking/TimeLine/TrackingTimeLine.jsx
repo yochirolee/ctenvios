@@ -15,8 +15,8 @@ export const TrackingTimeLine = ({ itemDetails, isSearching }) => {
 								</div>
 								<HistoryTimeLine history={itemDetails?.History} />
 
+								<p>Agencia: {itemDetails?.Agency}</p>
 								<p>Descripcion: {itemDetails?.Description}</p>
-								<p>Contenedor: {itemDetails?.ContainerNumber}</p>
 								<p>Provincia: {itemDetails?.Reciever?.Province}</p>
 								<p>Municipio: {itemDetails?.Reciever?.Municipality}</p>
 								<p>Direccion: {itemDetails?.Reciever?.Address}</p>
