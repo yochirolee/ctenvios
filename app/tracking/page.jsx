@@ -12,7 +12,11 @@ export default function Tracking() {
 		<div className="flex justify-center border">
 			<div className="min-h-screen  lg:w-1/2 ">
 				<TrackingSearchForm setItemDetails={setItemDetails} setIsSearching={setIsSearching} />
-				<TrackingTimeLine itemDetails={itemDetails} isSearching={isSearching} />
+				{!isSearching ? (
+					<TrackingTimeLine itemDetails={itemDetails} isSearching={isSearching} />
+				) : (
+					<p>Loading</p>
+				)}
 			</div>
 		</div>
 	);

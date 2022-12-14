@@ -14,6 +14,7 @@ export const TrackingSearchForm = ({ setItemDetails, setIsSearching }) => {
 
 	const onSubmit = async (data) => {
 		const result = await getItemDetails(data.search);
+		setIsSearching(true);
 
 		try {
 			let { data: tracking, error } = await supabase
@@ -52,10 +53,12 @@ export const TrackingSearchForm = ({ setItemDetails, setIsSearching }) => {
 					default:
 						break;
 				}
-
+				setIsSearching(false);
 				setItemDetails(result);
 			}
 		} catch (error) {
+			setIsSearching(false);
+			setItemDetails(null);
 			console.log(error, "EORRRRRRRRRR");
 		}
 	};
@@ -66,6 +69,8 @@ export const TrackingSearchForm = ({ setItemDetails, setIsSearching }) => {
 
 			return data.data;
 		} catch (error) {
+			setIsSearching(false);
+			setItemDetails(null);
 			console.log(error);
 		}
 	};
