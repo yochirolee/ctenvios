@@ -9,7 +9,7 @@ export default function Tracking() {
 	const [isSearching, setIsSearching] = useState(false);
 
 	return (
-		<div className="flex justify-center border">
+		<div className="flex justify-center ">
 			<div className="min-h-screen  lg:w-1/2 ">
 				<TrackingSearchForm setItemDetails={setItemDetails} setIsSearching={setIsSearching} />
 				{!isSearching ? (
