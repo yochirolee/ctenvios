@@ -1,6 +1,5 @@
 "use client";
 import axios from "axios";
-import { Result } from "postcss";
 import { useForm } from "react-hook-form";
 import { supabase } from "../../../Supabase/SupabaseClient";
 
@@ -48,10 +47,10 @@ export const TrackingSearchForm = ({ setItemDetails, setIsSearching, isSearching
 						result.Location = "En Almacen";
 						break;
 					case 2:
-						result.Location = "En Pallet "+" " + result.Pallet;
+						result.Location = "En Pallet " + " " + result.Pallet;
 						break;
 					case 3:
-						result.Location = "Contenedor " +" "+ result.ContainerNumber;
+						result.Location = "Contenedor " + " " + result.ContainerNumber;
 						break;
 
 					default:

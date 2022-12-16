@@ -7,7 +7,7 @@ export const TrackingTimeLine = ({ itemDetails }) => {
 				<div className="">
 					<div className="   flex flex-col  mb-4 mx-auto text-sm gap-2 ">
 						<div className="flex items-center my-4 w-full max-w-xs font-bold text-gray-600 rounded-lg  dark:text-gray-400 dark:bg-gray-800">
-							<div className=" text-sm font-bold ">
+							<div className=" text-sm font-bold flex items-center">
 								{itemDetails?.HBL}
 								<span className=" p-2 mx-4 bg-blue-500 text-white ring-2 ring-blue-200 shadow-md rounded-md">
 									{itemDetails?.Location}
