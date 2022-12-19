@@ -37,7 +37,7 @@ export const AppNavbar = () => {
 								stroke="currentColor"
 								stroke-width="2"
 							>
-								<path stroke-linecap="round" strokeLinejoin="round" d="M4 8h16M4 16h16" />
+								<path strokeLinecap="round" strokeLinejoin="round" d="M4 8h16M4 16h16" />
 							</svg>
 
 							<svg
@@ -48,7 +48,7 @@ export const AppNavbar = () => {
 								stroke="currentColor"
 								stroke-width="2"
 							>
-								<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+								<path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
 							</svg>
 						</button>
 					</div>
@@ -63,6 +63,9 @@ export const AppNavbar = () => {
 						<Link
 							className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
 							href="/"
+							onClick={() => {
+								setIsOpen(!isOpen);
+							}}
 						>
 							Inicio
 						</Link>
@@ -81,6 +84,9 @@ export const AppNavbar = () => {
 						<Link
 							className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
 							href="tracking"
+							onClick={() => {
+								setIsOpen(!isOpen);
+							}}
 						>
 							Tracking
 						</Link>
