@@ -64,7 +64,6 @@ export const SearchForm = ({ setSearch, isSearching }) => {
 									fill="#1C64F2"
 								/>
 							</svg>
-							Buscando...
 						</button>
 					) : (
 						<button
