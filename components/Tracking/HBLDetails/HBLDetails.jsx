@@ -4,13 +4,14 @@ import { fetchProductTrackingHistory } from "../../../Helpers/Products/fetchProd
 import { HistoryTimeLine } from "../TimeLine/HistoryTimeLine";
 
 export const HBLDetails = ({ product }) => {
+	console.log(product,"PRODUCT TO FIND DETAils")
 	const {
 		isLoading,
 		isError,
 		data: productsDetails,
 		error,
 	} = useQuery(["productHistory", product.HBL], () => fetchProductTrackingHistory(product));
-
+    console.log(productsDetails,"PRODUCTS DETAULS")
 	if (isLoading)
 		return (
 			<div className="mt-5">
