@@ -7,7 +7,7 @@ import Link from "next/link";
 export const AppNavbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	return (
-		<nav x-data={isOpen} className="relative bg-white mt-4 dark:bg-gray-800">
+		<nav className="relative bg-white mt-4 dark:bg-gray-800">
 			<div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
 				<div className="flex  justify-between">
 					<Image
@@ -30,7 +30,6 @@ export const AppNavbar = () => {
 							onClick={() => setIsOpen(!isOpen)}
 						>
 							<svg
-								x-show={isOpen}
 								xmlns="http://www.w3.org/2000/svg"
 								className="w-6 h-6"
 								fill="none"
@@ -38,7 +37,7 @@ export const AppNavbar = () => {
 								stroke="currentColor"
 								stroke-width="2"
 							>
-								<path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+								<path stroke-linecap="round" strokeLinejoin="round" d="M4 8h16M4 16h16" />
 							</svg>
 
 							<svg

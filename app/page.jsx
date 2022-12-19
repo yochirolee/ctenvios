@@ -7,6 +7,7 @@ import { FaFacebookSquare, FaInstagram } from "react-icons/fa";
 export default function Page() {
 	return (
 		<>
+		
 			<nav className=" flex ml-4 mb-4 text-xs justify-left" aria-label="Breadcrumb">
 				<ol className="inline-flex justify-center items-center space-x-1 md:space-x-3">
 					<li className="inline-flex items-center">
