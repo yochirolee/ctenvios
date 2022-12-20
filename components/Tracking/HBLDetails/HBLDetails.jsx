@@ -4,14 +4,14 @@ import { fetchProductTrackingHistory } from "../../../Helpers/Products/fetchProd
 import { HistoryTimeLine } from "../TimeLine/HistoryTimeLine";
 
 export const HBLDetails = ({ product }) => {
-	console.log(product,"PRODUCT TO FIND DETAils")
+	console.log(product, "PRODUCT TO FIND DETAils");
 	const {
 		isLoading,
 		isError,
 		data: productsDetails,
 		error,
 	} = useQuery(["productHistory", product.HBL], () => fetchProductTrackingHistory(product));
-    console.log(productsDetails,"PRODUCTS DETAULS")
+
 	if (isLoading)
 		return (
 			<div className="mt-5">
@@ -48,9 +48,19 @@ export const HBLDetails = ({ product }) => {
 					<p className="font-semibold border p-4 bg-blue-600 text-white rounded-lg">
 						{productsDetails[0]?.Location}
 					</p>
-					<p className="text-xs font-semibold">{product?.HBL}</p>
+					<div>
+						<p className="text-xs font-semibold">{product?.HBL}</p>
+						<p>{product?.Description}</p>{" "}
+					</div>
+				</div>
+				<div className="flex text-center justify-center text-xs gap-2 mb-4  p-2">
+					<p>
+						Envio: <span>{product?.Type}</span>
+					</p>
 
-					<p>{product?.Description}</p>
+					<p>
+						Peso: <span>{product?.Weight} Lbs</span>
+					</p>
 				</div>
 				<div className="inline-flex">
 					<HistoryTimeLine history={productsDetails} />
