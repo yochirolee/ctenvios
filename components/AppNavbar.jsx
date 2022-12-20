@@ -1,7 +1,6 @@
 import { React, useState } from "react";
 import { Cart } from "../components/Cart";
 import { AiOutlineUser } from "react-icons/ai";
-import Image from "next/image";
 import Link from "next/link";
 
 export const AppNavbar = () => {

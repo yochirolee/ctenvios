@@ -4,7 +4,6 @@ import { fetchProductTrackingHistory } from "../../../Helpers/Products/fetchProd
 import { HistoryTimeLine } from "../TimeLine/HistoryTimeLine";
 
 export const HBLDetails = ({ product }) => {
-	console.log(product, "PRODUCT TO FIND DETAils");
 	const {
 		isLoading,
 		isError,
