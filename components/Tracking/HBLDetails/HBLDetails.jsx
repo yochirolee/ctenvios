@@ -48,12 +48,17 @@ export const HBLDetails = ({ product }) => {
 					<p className="font-semibold border p-4 bg-blue-600 text-white rounded-lg">
 						{productsDetails[0]?.Location}
 					</p>
+
 					<div>
 						<p className="text-xs font-semibold">{product?.HBL}</p>
 						<p>{product?.Description}</p>{" "}
 					</div>
 				</div>
 				<div className="flex text-center justify-center text-xs gap-2 mb-4  p-2">
+					<p>
+						Factura:{" "}
+						<span className="p-2 bg-green-200 text-green-700 rounded-lg">{product.Invoice}</span>
+					</p>
 					<p>
 						Envio: <span>{product?.Type}</span>
 					</p>

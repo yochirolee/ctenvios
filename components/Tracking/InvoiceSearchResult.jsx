@@ -14,7 +14,6 @@ export const InvoiceSearchResult = ({ search, setSearch }) => {
 		enabled: Boolean(search),
 	});
 
-	
 	if (isError)
 		return (
 			<div className="flex px-4">
@@ -33,13 +32,7 @@ export const InvoiceSearchResult = ({ search, setSearch }) => {
 		<div className="flex flex-col  justify-center lg:items-center my-4 p-4">
 			<SearchForm setSearch={setSearch} isSearching={isLoading} />
 			{Invoice ? (
-				<div className=" mt-10  ">
-					<div>
-						{Invoice?.map((product) => (
-							<HBLDetails key={product.HBL} product={product} />
-						))}
-					</div>
-				</div>
+				Invoice?.map((product) => <HBLDetails key={product.HBL} product={product} />)
 			) : (
 				<div className="mx-auto text-xs">Ingrese su Numero de Factura o HBL</div>
 			)}

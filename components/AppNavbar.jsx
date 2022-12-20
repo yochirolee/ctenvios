@@ -10,13 +10,9 @@ export const AppNavbar = () => {
 		<nav className="relative bg-white mt-4 dark:bg-gray-800">
 			<div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
 				<div className="flex  justify-between">
-					<Image
-						className="h-8 md:h-10 object-scale-down"
-						height={36}
-						width={46}
-						src="/ctelogo.png"
-						alt="logo"
-					/>
+					<a href="https://ctenvios.com" className="flex items-center mb-4 sm:mb-0">
+						<img src="ctelogo.png" className="mr-3 h-8" alt="Logo" />
+					</a>
 
 					<div className="flex lg:hidden">
 						<div className="flex flex-row gap-4 items-center justify-center ">
@@ -35,7 +31,7 @@ export const AppNavbar = () => {
 								fill="none"
 								viewBox="0 0 24 24"
 								stroke="currentColor"
-								stroke-width="2"
+								strokeWidth="2"
 							>
 								<path strokeLinecap="round" strokeLinejoin="round" d="M4 8h16M4 16h16" />
 							</svg>
