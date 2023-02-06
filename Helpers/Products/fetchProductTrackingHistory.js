@@ -33,24 +33,42 @@ const createLocation = (index, product) => {
 };
 
 const createProductHistory = (product) => {
-	let trackingHistory = [];
+	if (!!product) {
+		let trackingHistory = [];
 
-	for (let index = 0; index <= product.Location; index++) {
-		const history = createLocation(index, product);
-		trackingHistory = [...trackingHistory, history];
+		for (let index = 0; index <= product.Location; index++) {
+			const history = createLocation(index, product);
+			trackingHistory = [...trackingHistory, history];
+		}
+		trackingHistory.reverse();
+		return trackingHistory;
 	}
-	trackingHistory.reverse();
-	return trackingHistory;
+	return null;
 };
 
 export const fetchProductTrackingHistory = async (product) => {
+	if (!product) return;
 	let productHistory = createProductHistory(product);
 
-	let { data: tracking, error } = await supabase
-		.from("trackingHistory")
-		.select("*")
+	let { data: trackingHistory, error } = await supabase
+		.from("productsTrackingHistory")
+		.select(
+			`
+		CreatedAt,
+		locations (  
+		  LocationName
+		  
+		)
+	  `,
+		)
 		.order("CreatedAt", { ascending: false })
 		.eq("HBL", product.HBL);
+
+	let tracking = trackingHistory?.map((location) => ({
+		HBL: location?.HBL,
+		Location: location?.locations?.LocationName,
+		CreatedAt: location?.CreatedAt,
+	}));
 
 	if (error) throw new Error(error.message);
 	if (tracking) productHistory = [...tracking, ...productHistory];

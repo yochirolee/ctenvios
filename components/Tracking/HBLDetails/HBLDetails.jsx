@@ -45,7 +45,7 @@ export const HBLDetails = ({ product }) => {
 			<div className="flex flex-col overflow-x-auto  justify-between text-center  my-2 p-4">
 				<div className="flex products-center items-center text-left gap-4 py-4 text-xs">
 					<p className="font-semibold border p-4 bg-blue-600 text-white rounded-lg">
-						{productsDetails[0]?.Location}
+						{product?.Agency}
 					</p>
 
 					<div>
