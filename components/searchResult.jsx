@@ -1,7 +1,7 @@
 import { React } from "react";
 import { ProductTrackingHistory } from "./productTrackingHistory";
 
-export const SearchResult = ({ selectedProductDetails, setSearch }) => {
+export const SearchResult = ({ selectedProductDetails }) => {
 	return (
 		<div className="relative w-full  h-auto">
 			<div className="relative bg-white rounded-lg mt-10 dark:bg-gray-700">
