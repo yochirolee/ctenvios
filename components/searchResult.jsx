@@ -8,7 +8,7 @@ export const SearchResult = ({ selectedProductDetails }) => {
 				{selectedProductDetails ? (
 					<div className="bg-gray-50 p-4 rounded-lg py-10">
 						<div className="px-6">
-							<div className="  flex flex-col text-sm gap-2 mb-4 overflow-x-auto ">
+							<div className="  flex flex-col text-sm gap-2 mb-4 ">
 								{selectedProductDetails?.Products ? (
 									<div>
 										{selectedProductDetails?.Products.map((product, index) => (
