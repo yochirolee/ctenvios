@@ -6,6 +6,7 @@ export const SearchResult = ({ selectedProductDetails }) => {
 		<div className="relative w-full  h-auto">
 			<div className="relative bg-white rounded-lg mt-10 dark:bg-gray-700">
 				{selectedProductDetails ? (
+					
 					<div className="bg-gray-50 p-4 rounded-lg py-10">
 						<div className="px-6">
 							<div className="  flex flex-col text-sm gap-2 mb-4 ">
