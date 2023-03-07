@@ -1,18 +1,12 @@
 import { useQuery } from "react-query";
 import { fetchInvoicesFromViewsByInvoiceId } from "../../Helpers/dbViews/fethInvoicesFromViewByInvoiceId";
 import { fetchInvoicesById } from "../../Helpers/Invoices/fetchInvoiceById";
+import { useFetchByInvoiceOrHBL } from "../../Helpers/useFetchByInvoiceOrHBL";
 import { SearchForm } from "./Forms/SearchForm";
 import { HBLDetails } from "./HBLDetails/HBLDetails";
 
-export const InvoiceSearchResult = ({ search, setSearch }) => {
-	const {
-		isLoading,
-		isError,
-		data: Invoice,
-		error,
-	} = useQuery(["invoice", search], () => fetchInvoicesFromViewsByInvoiceId(search), {
-		enabled: Boolean(search),
-	});
+export const InvoiceSearchResult = ({Invoice, setSearch,isError,isLoading }) => {
+
 
 	if (isError)
 		return (
